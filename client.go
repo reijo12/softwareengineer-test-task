@@ -19,10 +19,10 @@ func main() {
 	c := service.NewScoringServiceClient(conn)
 
 	startDate := service.Date{
-		Date: 19679670679,
+		Date: 1563314456,
 	}
 	endDate := service.Date{
-		Date: 19679679679,
+		Date: 1563400856,
 	}
 
 	period := service.Period{
