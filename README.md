@@ -1,3 +1,25 @@
+# Solution
+
+## Creating RPC Service
+    Creating Docker service:
+`docker build --tag docker-scoring-service .`
+    Running service:  
+`docker run -it --rm -p 9000:9000 docker-scoring-service`
+
+## Running simple client
+    Running simple client:
+`go run .\client.go`
+
+Recommend running it outside of the container otherwise you need to rebuild the image each time
+you change the start date and end date.
+
+## TODOs
+    1. Remove database from Docker image
+    2. Choose one location for Scoring algorithm (Database or Golang) side
+    3. Add configuration files to allow changing ports
+    4. Refactor similar code to single codebase
+    5. Add tests
+
 # Software Engineer Test Task
 
 As a test task for [Klaus](https://www.klausapp.com) software engineering position we ask our candidates to build a small [gRPC](https://grpc.io) service using language of their choice. Prefered language for new services in Klaus is [Go](https://golang.org).
