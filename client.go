@@ -35,14 +35,14 @@ func main() {
 		log.Fatalf("Error when calling GetCategoryScoreOverPeriodOfTime: %s", err)
 	}
 
-	log.Printf("Response from GetOveralQualityScoreOverPeriodOfTime: %s", responseCategory)
+	log.Printf("Response from GetCategoryScoreOverPeriodOfTime: %s", responseCategory)
 
 	responseTicket, err := c.GetScoresByTicketOverPeriodOfTime(context.Background(), &period)
 	if err != nil {
 		log.Fatalf("Error when calling GetScoresByTicketOverPeriodOfTime: %s", err)
 	}
 
-	log.Printf("Response from GetOveralQualityScoreOverPeriodOfTime: %s", responseTicket)
+	log.Printf("Response from GetScoresByTicketOverPeriodOfTime: %s", responseTicket)
 
 	responseScore, err := c.GetOveralQualityScoreOverPeriodOfTime(context.Background(), &period)
 	if err != nil {
