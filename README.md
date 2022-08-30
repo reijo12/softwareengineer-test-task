@@ -1,13 +1,13 @@
 # Solution
 
 ## Creating RPC Service
-    Creating Docker service:
+Creating Docker service:
 `docker build --tag docker-scoring-service .`
-    Running service:  
+Running service:  
 `docker run -it --rm -p 9000:9000 docker-scoring-service`
 
 ## Running simple client
-    Running simple client:
+Running simple client:
 `go run .\client.go`
 
 Recommend running it outside of the container otherwise you need to rebuild the image each time
