@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+option go_package = "./service";
+
+package service;
+
+message Date {
+    int64 Date = 1;
+}
+
+message Score {
+    int64 Score = 1;
+}
+
+message Period {
+    Date StartDate = 1;
+    Date EndDate = 2;
+}
+
+message CategoryScore {
+    string CategoryName = 1;
+    int64 Score = 2;
+}
+
+message DateScore {
+    string Date = 1;
+    int64 Score = 2;
+}
+
+message ScoreByCategory {
+    CategoryScore CategoryScore = 1;
+    int64 Ratings = 2;
+    repeated DateScore DateScores = 3;
+}
+
+message ScoresByCategories {
+    repeated ScoreByCategory ScoresByCategories = 1;
+}
+
+message ScoreByTicket {
+    int64 ticketId = 1;
+    repeated CategoryScore CategoryScores = 2;
+}
+
+message ScoresByTickets {
+    repeated ScoreByTicket ScoresByTickets = 1;
+}
+
+service ScoringService {
+
+    rpc GetCategoryScoreOverPeriodOfTime(Period) returns (ScoresByCategories) {}
+
+    rpc GetScoresByTicketOverPeriodOfTime(Period) returns (ScoresByTickets) {}
+
+    rpc GetOveralQualityScoreOverPeriodOfTime(Period) returns (Score) {}
+
+    rpc GetScoreChangeOverPeriodOfTime(Period) returns (Score) {}
+}
